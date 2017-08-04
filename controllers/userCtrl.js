@@ -27,7 +27,9 @@ module.exports = {
       if (val.name == req.body.name && val.password == req.body.password){
         req.session.currentUser = val
         res.send({userFound: true});
-        
+      }
+      else{
+        res.send({userFound: false})
       }
     })
   }
