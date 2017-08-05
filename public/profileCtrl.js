@@ -1,15 +1,15 @@
 angular.module('userProfiles')
-.controller('profileCtrl', function( $scope ) {
-	// FIX ME - assign values to $scope.currentUser and $scope.friends
-	$scope.currentUser = friendService.getFriends().then(function(response) {
-		return response.data
-	})
+    .controller('profileCtrl', function($scope, friendService) {
+        // FIX ME - assign values to $scope.currentUser and $scope.friends
+        $scope.getFriends = function() {
+            friendService.getFriends().then(function(response) {
+                $scope.currentUser = response.currentUser;
+                $scope.friends = response.friends;
+            })
+        }
 
-	$scope.friends = friendService.getFriends().then(function(response) {
-		return response.data
-	})
-
-});
+        $scope.getFriends();
+    });
 
 
 //Lastly, in `profileCtrl.js` you will need to assign the correct values

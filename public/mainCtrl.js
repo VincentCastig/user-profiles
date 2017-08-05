@@ -6,6 +6,7 @@ angular.module('userProfiles')
 			if (response.data.userFound) {
 				$location.path('/profile');
 			} else {
+				console.log(response.data)
 				alert('user not found');
 			}
 		});

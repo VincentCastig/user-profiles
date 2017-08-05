@@ -25,10 +25,10 @@
 module.exports = {
 	getFriendsProfiles: function(req, res){
 		var x=[]
-		console.log(req.session.currentUser)
-			for(i = 0; i < req.session.currentUser.length; i++){
+		console.log(res.body)
+			for(i = 0; i < req.session.currentUser.friends.length; i++){
 					for(obj of profiles){
-						if(req.session.currentUser.name[i] == obj.name){
+						if(req.session.currentUser.friends[i] == obj.name){
 							x.push(obj)
 						}
 					}

@@ -10,7 +10,7 @@ The basics of our `server.js` setup should be familiar to you by now, but we wil
 --save` express, express-session, body-parser, and cors. Don't forget to create a `.gitignore` file ignoring your `node_modules` folder.
 
 * Express-session is what will allow us to track users as they navigate about the site
-* CORS lets us avoid having to write custom middleware for headers
+* CORS lets us avoid having to write custom middleware for headers.
 
 Require your dependencies and initialize express. Run the `app.use` method on `bodyParser.json()` and set the app to listen on a port of your choice. Run
 `nodemon server.js` and ensure everything is working so far.

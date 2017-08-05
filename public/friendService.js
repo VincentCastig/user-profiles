@@ -1,16 +1,21 @@
 angular.module('userProfiles')
-.service('friendService', function( $http ) {
+    .service('friendService', function($http) {
 
 
-    this.login = function( user ) {
-      return $http.get('api/user')
-    };
+        this.login = function(user) {
+            /* FIX ME */
+            return $http.post('/api/login', user);
+        };
 
-    this.getFriends = function() {
-    	return $http.post('api/profiles')
-    };
+        this.getFriends = function() {
+            /* FIX ME */
+            return $http.get('/api/profiles').then(function(response) {
+                console.log(response);
+                return response.data;
+            });
+        };
 
-});
+    })
 
 
 //Next, we need to write the `getFriends` method in `friendService.js` so that it
