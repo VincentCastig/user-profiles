@@ -24,18 +24,23 @@
 
 module.exports = {
 	getFriendsProfiles: function(req, res){
+		var friends = req.session.currentUser.friends
 		var x=[]
-		console.log(res.body)
-			for(i = 0; i < req.session.currentUser.friends.length; i++){
+
+			for(i = 0; i < friends.length; i++){
+
 					for(obj of profiles){
-						if(req.session.currentUser.friends[i] == obj.name){
+
+						if(friends[i] == obj.name){
+							console.log(friends[i] + " " + obj.name )
 							x.push(obj)
 						}
 					}
+				}
 					res.send({
 						currentUser: req.session.currentUser,
 						friends: x
 					})
-			}
+
 	}
 }

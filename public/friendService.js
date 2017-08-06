@@ -10,7 +10,7 @@ angular.module('userProfiles')
         this.getFriends = function() {
             /* FIX ME */
             return $http.get('/api/profiles').then(function(response) {
-                console.log(response);
+                
                 return response.data;
             });
         };
