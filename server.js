@@ -27,6 +27,7 @@ app.post('/api/login', userCtrl.login)
 app.get('/api/profiles', profileCtrl.getFriendsProfiles)
 
 
+
 app.listen(port, function(){
   console.log(`Dude, I'm listening on port ${port}`)
 })

@@ -32,15 +32,17 @@ module.exports = {
 					for(obj of profiles){
 
 						if(friends[i] == obj.name){
-							console.log(friends[i] + " " + obj.name )
+
 							x.push(obj)
 						}
 					}
 				}
+
 					res.send({
 						currentUser: req.session.currentUser,
 						friends: x
 					})
+					console.log(req)
 
 	}
 }
